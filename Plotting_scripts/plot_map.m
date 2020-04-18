@@ -5,7 +5,6 @@ function [] = plot_map(map_to_plot)
         subplot(numel(keys),1,itr);
         plot(signal_out);
         title(keys{itr},'interpreter','none')
-
     end
 end
 
