@@ -9,7 +9,6 @@ function [] = plot_step_responce(controllers,plants,varargin)
  parse(p,varargin{:});
 
  n_cases = numel(p.Results.plant);
- [subplot_dims] = FindClosestFactorization(n_cases);
  
  fid = figure('Name',p.Results.FigureTitle);
  fid.PaperPositionMode = 'auto';

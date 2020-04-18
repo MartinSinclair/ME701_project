@@ -52,5 +52,6 @@ function [] = plot_sub_func(settle_data,p)
  xlabel(hA,p.Results.x_label);
  ylabel(hA,p.Results.y_label);
  zlabel(hA,p.Results.z_label);
+ zlim([5,20])
  
 end

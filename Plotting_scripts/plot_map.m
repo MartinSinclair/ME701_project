@@ -1,10 +1,24 @@
-function [] = plot_map(map_to_plot)
-    keys = map_to_plot.keys;
-    for itr = 1:numel(keys)
-        signal_out = map_to_plot(keys{itr}).get('yout').get('SensorReading').Values;
-        subplot(numel(keys),1,itr);
+function [] = plot_map(map_to_plot,varargin)
+
+ p = inputParser;
+ addParameter(p,'keys',map_to_plot.keys);
+ addParameter(p,'title',map_to_plot.keys);
+ addParameter(p,'FigureTitle',{'SimulationResponce'});
+ parse(p,varargin{:});
+ 
+ n_cases = numel(p.Results.keys);
+ 
+ fid = figure('Name',p.Results.FigureTitle);
+ fid.PaperPositionMode = 'auto';
+ fig_pos = fid.PaperPosition;
+ fid.PaperSize = [fig_pos(3) fig_pos(4)];
+ 
+    for itr = 1:n_cases
+        key = p.Results.keys{itr};
+        signal_out = map_to_plot(key).get('yout').get('SensorReading').Values;
+        subplot(n_cases,1,itr);
         plot(signal_out);
-        title(keys{itr},'interpreter','none')
+        title(p.Results.title{itr})
     end
 end
 
