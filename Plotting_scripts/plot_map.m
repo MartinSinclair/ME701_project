@@ -3,7 +3,7 @@ function [fid] = plot_map(map_to_plot,varargin)
  p = inputParser;
  addParameter(p,'keys',map_to_plot.keys);
  addParameter(p,'title',map_to_plot.keys);
- addParameter(p,'FigureTitle',{'SimulationResponce'});
+ addParameter(p,'FigureTitle','SimulationResponce');
  parse(p,varargin{:});
  
  n_cases = numel(p.Results.keys);
