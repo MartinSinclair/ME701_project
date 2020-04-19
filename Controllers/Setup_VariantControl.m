@@ -1,9 +1,13 @@
 VC_Cascade_Hinf_LQR = Simulink.Variant('ControlType==Controller_Type.Cascade_Hinf_LQR');
 VC_Hinf = Simulink.Variant('ControlType==Controller_Type.Hinf');
 VC_LQR = Simulink.Variant('ControlType==Controller_Type.LQR');
+
 VC_None = Simulink.Variant('ControlType==Controller_Type.None');
 VC_H2 = Simulink.Variant('ControlType==Controller_Type.H2');
 VC_H2_LQR = Simulink.Variant('ControlType==Controller_Type.H2_LQR');
+
+VC_LQG = Simulink.Variant('ControlType==Controller_Type.LQG');
+VC_Hinf_LQG = Simulink.Variant('ControlType==Controller_Type.Hinf_LQG');
 
 ControlType=Controller_Type.None;
 
