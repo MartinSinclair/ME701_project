@@ -1,4 +1,4 @@
-function [] = plot_step_responce(controllers,plants,varargin)
+function [fid] = plot_step_responce(controllers,plants,varargin)
 
  p = inputParser;
  addParameter(p,'plant',{'plant_u'});

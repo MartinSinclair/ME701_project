@@ -47,6 +47,9 @@ plot_sub_func(settle_data,p);view([130,45])
 end
 function [] = plot_sub_func(settle_data,p)
  surf(p.Results.x_array,p.Results.y_array,settle_data');
+ shading interp
+ caxis([5 12])
+ 
  hA = gca;
  % label figure
  xlabel(hA,p.Results.x_label);

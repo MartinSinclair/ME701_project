@@ -1,4 +1,4 @@
-function [] = plot_map(map_to_plot,varargin)
+function [fid] = plot_map(map_to_plot,varargin)
 
  p = inputParser;
  addParameter(p,'keys',map_to_plot.keys);
