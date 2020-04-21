@@ -31,18 +31,19 @@ function [fid] = plot_step_responce(controllers,plants,varargin)
     ha=stepplot(CL,30,stepDataOptions('StepAmplitude',2));
     p1=getoptions(ha);
     p1.Title.String = '';
+    if itr ~= n_cases
+       p1.XLabel.String='';
+       p1.XLabel.Color =[1,1,1]
+    end
+    
     setoptions(ha,p1);
     grid on
 
     
-    if itr ~= n_cases
-       p1.XLabel.String=''; 
-    end
-    
     hA=gca;hA.Title.String = ['Controller:',itr_title,...
         ' SettlingTime:' num2str(info.SettlingTime),...
         ' Overshoot:' num2str(info.Overshoot)];
-    
+    hA.Title.Color=[0,0,0];
  end
  
 end
