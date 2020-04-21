@@ -33,7 +33,7 @@ function [fid] = plot_step_responce(controllers,plants,varargin)
     p1.Title.String = '';
     if itr ~= n_cases
        p1.XLabel.String='';
-       p1.XLabel.Color =[1,1,1]
+       p1.XLabel.Color =[1,1,1];
     end
     
     setoptions(ha,p1);
