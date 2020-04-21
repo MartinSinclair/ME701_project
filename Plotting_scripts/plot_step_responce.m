@@ -25,14 +25,24 @@ function [fid] = plot_step_responce(controllers,plants,varargin)
     
     CL = feedback(itr_plant,itr_control,itr_feedback,'name');
     CL = CL('position','u force');
-    stepplot(CL,30,stepDataOptions('StepAmplitude',2));
-    grid on
 
     info = stepinfo(CL);
-       
-    hA=gca;hA.Title.String = [itr_title,...
+
+    ha=stepplot(CL,30,stepDataOptions('StepAmplitude',2));
+    p1=getoptions(ha);
+    p1.Title.String = '';
+    setoptions(ha,p1);
+    grid on
+
+    
+    if itr ~= n_cases
+       p1.XLabel.String=''; 
+    end
+    
+    hA=gca;hA.Title.String = ['Controller:',itr_title,...
         ' SettlingTime:' num2str(info.SettlingTime),...
         ' Overshoot:' num2str(info.Overshoot)];
+    
  end
  
 end
