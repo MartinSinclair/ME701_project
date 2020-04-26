@@ -5,7 +5,7 @@ function [fid,hA] = plot_cutoff_search(settle_data,varargin)
  p = inputParser;
  addParameter(p,'x_array',1:size(settle_data,1));
  addParameter(p,'y_array',1:size(settle_data,2));
- addParameter(p,'title','Responce Signal');
+ addParameter(p,'title','Response Signal');
  addParameter(p,'x_label','x');
  addParameter(p,'y_label','y');
  addParameter(p,'z_label','z');
