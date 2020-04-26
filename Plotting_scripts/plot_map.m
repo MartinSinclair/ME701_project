@@ -19,6 +19,12 @@ function [fid] = plot_map(map_to_plot,varargin)
         subplot(n_cases,1,itr);
         plot(signal_out);
         title(p.Results.title{itr})
+        p1 = gca;
+       if itr ~= n_cases
+            p1.XLabel.String='';
+            p1.XLabel.Color =[1,1,1];
+            p1.XTickLabel=[];
+        end
     end
 end
 

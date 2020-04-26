@@ -44,6 +44,7 @@ function [fid] = plot_step_responce(controllers,plants,varargin)
         ' SettlingTime:' num2str(info.SettlingTime),...
         ' Overshoot:' num2str(info.Overshoot)];
     hA.Title.Color=[0,0,0];
+    hA.FontSize = 18;
  end
  
 end
